@@ -1,0 +1,48 @@
+{
+  "name": "waves-platform",
+  "version": "0.1.0",
+  "description": "鸣潮个人数据通用服务, 支持 MCP 和后续 CLI/HTTP 适配",
+  "type": "module",
+  "main": "src/mcp/server.js",
+  "bin": {
+    "waves-platform": "src/cli.js",
+    "waves-platform-mcp": "src/mcp/server.js"
+  },
+  "files": [
+    ".env.example",
+    "LICENSE",
+    "README.md",
+    "resources/Weight",
+    "src"
+  ],
+  "license": "AGPL-3.0-only",
+  "keywords": [
+    "wuthering-waves",
+    "waves",
+    "mcp",
+    "鸣潮",
+    "库街区"
+  ],
+  "engines": {
+    "node": ">=22"
+  },
+  "scripts": {
+    "start:mcp": "node src/mcp/server.js",
+    "start": "node src/mcp/server.js",
+    "waves:login": "node src/cli.js login",
+    "waves:accounts": "node src/cli.js accounts",
+    "waves:validate": "node src/cli.js validate",
+    "waves:diagnose": "node src/cli.js diagnose",
+    "check": "node --check src/mcp/server.js && node --check src/services/index.js",
+    "test": "node --test"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.30.0",
+    "axios": "^1.7.8",
+    "https-proxy-agent": "^7.0.6",
+    "p-limit": "^6.2.0",
+    "qs": "^6.14.0",
+    "yaml": "^2.8.1",
+    "zod": "^3.25.76"
+  }
+}
