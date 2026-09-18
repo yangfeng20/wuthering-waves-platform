@@ -334,3 +334,8 @@ Pi 会自动读取对应的 MCP 配置。项目只使用 npm 包命令, 不依�
 本项目复用了原 waves-plugin 的接口适配思路和部分评分规则, 保留 AGPL-3.0 许可证与原作者归属。原始项目地址:
 
 https://github.com/erzaozi/waves-plugin
+
+
+## Link
+
+[linuxdo](https://linux.do)
