@@ -1,5 +1,5 @@
 {
-  "name": "waves-platform",
+  "name": "@maple_20/waves-platform",
   "version": "0.1.0",
   "description": "鸣潮个人数据通用服务, 支持 MCP 和后续 CLI/HTTP 适配",
   "type": "module",

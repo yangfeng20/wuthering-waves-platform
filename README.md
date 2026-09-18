@@ -232,7 +232,7 @@ Windows 路径建议使用正斜杠。配置完成后重启 MCP 客户端。
 发布后可以直接安装:
 
 ```bash
-npm install -g waves-platform
+npm install -g @maple_20/waves-platform
 ```
 
 登录鸣潮账号:
@@ -269,7 +269,7 @@ MCP 客户端配置:
       "args": [
         "-y",
         "--package",
-        "waves-platform",
+        "@maple_20/waves-platform",
         "waves-platform-mcp"
       ]
     }
@@ -280,7 +280,7 @@ MCP 客户端配置:
 登录命令对应为:
 
 ```bash
-npx -y --package waves-platform waves-platform login
+npx -y --package @maple_20/waves-platform waves-platform login
 ```
 
 ## 在 Pi 中使用
