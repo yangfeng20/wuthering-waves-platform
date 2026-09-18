@@ -136,26 +136,34 @@ waves_character_build
 ## 环境要求
 
 - Node.js 22+
-- pnpm 9+
 - 一个支持 MCP stdio 的 AI 客户端
 
 不需要 Yunzai-Bot, Redis, QQ 机器人或锅巴插件。
 
 ## 安装
 
-```bash
-cd D:/Program\ Project/Project\ List/wuthering-waves-platform
-pnpm install
-```
-
-可选配置环境变量:
+推荐使用 npm 全局安装:
 
 ```bash
-cp .env.example .env
+npm install -g wuthering-waves-platform
 ```
 
-Windows PowerShell 可以直接复制 `.env.example` 为 `.env` 后编辑。
+安装完成后, 可以使用项目 CLI 登录和管理账号:
 
+```bash
+wuthering-waves-platform login
+wuthering-waves-platform accounts
+wuthering-waves-platform validate
+wuthering-waves-platform diagnose
+```
+
+不想全局安装时, 可以使用 npx:
+
+```bash
+npx -y --package wuthering-waves-platform wuthering-waves-platform login
+```
+
+Windows, macOS 和 Linux 均可使用。
 ## 登录
 
 注意: 不要执行 `pnpm login`, 这是 pnpm 自带的 npm 仓库登录命令, 不是本项目的游戏账号登录。
@@ -163,7 +171,7 @@ Windows PowerShell 可以直接复制 `.env.example` 为 `.env` 后编辑。
 推荐使用项目自己的命令:
 
 ```bash
-pnpm run waves:login
+wuthering-waves-platform login
 ```
 
 按提示输入手机号, 库街区短信验证码和账号名称。建议先在库街区 App 中完成数据展示设置, 然后退出 App, 再执行本命令获取验证码。登录完成后不要再次在 App 或其他插件中登录同一账号, 以免旧 Token 失效。
@@ -177,19 +185,19 @@ pnpm run waves:login
 查看已保存账号:
 
 ```bash
-pnpm run waves:accounts
+wuthering-waves-platform accounts
 ```
 
 检查当前 Token:
 
 ```bash
-pnpm run waves:validate
+wuthering-waves-platform validate
 ```
 
 诊断账号绑定和角色数据接口:
 
 ```bash
-pnpm run waves:diagnose
+wuthering-waves-platform diagnose
 ```
 
 也可以在 MCP 客户端中调用 `waves_account_login_sms`。该工具只返回脱敏账号信息, 不会返回 Token。
@@ -288,11 +296,7 @@ npx -y --package wuthering-waves-platform wuthering-waves-platform login
 
 ## 在 Pi 中使用
 
-当前环境已经安装 `pi-mcp-adapter`。项目已写入 Pi 全局 MCP 配置:
-
-```text
-C:/Users/maple/.pi/agent/mcp.json
-```
+Pi 会自动读取对应的 MCP 配置。项目只使用 npm 包命令, 不依赖开发者本机路径。
 
 如果 Pi 当前会话已经打开, 执行:
 
@@ -310,11 +314,11 @@ C:/Users/maple/.pi/agent/mcp.json
 ## 推荐使用顺序
 
 ```text
-1. 运行 pnpm run waves:login 登录游戏账号
-2. 调用 waves_account_list 查看账号
-3. 调用 waves_character_list 查看角色
-4. 调用 waves_all_character_builds 获取完整练度
-5. 调用 waves_analyze_build 获取培养分析
+1. 运行 `wuthering-waves-platform login` 登录游戏账号
+2. 调用 `waves_account_list` 查看账号
+3. 调用 `waves_character_list` 查看角色
+4. 调用 `waves_all_character_builds` 获取完整练度
+5. 调用 `waves_analyze_build` 获取培养分析
 ```
 
 ## 数据展示开关
