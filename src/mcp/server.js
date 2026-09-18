@@ -9,7 +9,7 @@ import { createServices } from '../services/index.js';
 
 const config = createConfig();
 const services = createServices(config);
-const server = new McpServer({ name: 'waves-platform', version: '0.1.0' });
+const server = new McpServer({ name: 'wuthering-waves-platform', version: '0.1.0' });
 
 function compact(value, includeRaw = false) {
   if (includeRaw) return value;
@@ -103,7 +103,7 @@ const rawSchema = { ...accountSchema, includeRaw: z.boolean().optional().describ
 
 registerTool(
   'waves_capabilities',
-  '查看 waves-platform 当前支持的数据能力和 MCP 工具分类。',
+  '查看 wuthering-waves-platform 当前支持的数据能力和 MCP 工具分类。',
   {},
   async () => ({
     account: ['登录', '账号列表', '账号切换', 'Token 检查', '账号诊断', '账号快照'],

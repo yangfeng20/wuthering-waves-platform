@@ -6,10 +6,10 @@
  */
 export function logInfo(message, details) {
   if (details === undefined) {
-    console.error(`[waves-platform] ${message}`);
+    console.error(`[wuthering-waves-platform] ${message}`);
     return;
   }
-  console.error(`[waves-platform] ${message}`, details);
+  console.error(`[wuthering-waves-platform] ${message}`, details);
 }
 
 /**
@@ -19,5 +19,5 @@ export function logInfo(message, details) {
  * @returns {void}
  */
 export function logError(message, details) {
-  console.error(`[waves-platform] ${message}`, details ?? '');
+  console.error(`[wuthering-waves-platform] ${message}`, details ?? '');
 }

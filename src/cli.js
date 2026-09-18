@@ -40,11 +40,11 @@ async function main() {
     console.log(JSON.stringify(await services.accounts.diagnose(process.argv[3]), null, 2));
     return;
   }
-  console.log('waves-platform 可用命令:');
-  console.log('  pnpm run waves:login     使用短信验证码登录');
-  console.log('  pnpm run waves:accounts  查看已保存账号');
-  console.log('  pnpm run waves:validate  检查当前账号 Token');
-  console.log('  pnpm run waves:diagnose  诊断账号和角色数据接口');
+  console.log('wuthering-waves-platform 可用命令:');
+  console.log('  pnpm run waves:login             使用短信验证码登录');
+  console.log('  pnpm run waves:accounts          查看已保存账号');
+  console.log('  pnpm run waves:validate          检查当前账号 Token');
+  console.log('  pnpm run waves:diagnose          诊断账号和角色数据接口');
 }
 
 main().catch(error => {

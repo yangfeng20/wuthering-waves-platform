@@ -44,7 +44,7 @@ export function createConfig() {
     timeout: numberEnv('WAVES_HTTP_TIMEOUT', 30000),
     maxConcurrency: Math.max(1, numberEnv('WAVES_MAX_CONCURRENCY', 3)),
     logLevel: process.env.WAVES_LOG_LEVEL || 'info',
-    userAgent: process.env.WAVES_USER_AGENT || 'waves-platform/0.1.0',
+    userAgent: process.env.WAVES_USER_AGENT || 'wuthering-waves-platform/0.1.0',
     envToken: process.env.WAVES_TOKEN || '',
     envUserId: process.env.WAVES_USER_ID || '',
     envServerId: process.env.WAVES_SERVER_ID || '',

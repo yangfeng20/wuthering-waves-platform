@@ -1,4 +1,4 @@
-# waves-platform
+# wuthering-waves-platform
 
 鸣潮个人数据通用服务。项目的核心能力独立于 Yunzai 和 Redis, 当前第一阶段通过 MCP stdio 暴露给 AI 客户端。
 
@@ -144,7 +144,7 @@ waves_character_build
 ## 安装
 
 ```bash
-cd D:/Program\ Project/Project\ List/waves-platform
+cd D:/Program\ Project/Project\ List/wuthering-waves-platform
 pnpm install
 ```
 
@@ -215,10 +215,13 @@ WAVES_DID=登录时生成的设备标识
 ```json
 {
   "mcpServers": {
-    "waves-platform": {
-      "command": "node",
+    "wuthering-waves-platform": {
+      "command": "npx",
       "args": [
-        "D:/Program Project/Project List/waves-platform/src/mcp/server.js"
+        "-y",
+        "--package",
+        "wuthering-waves-platform",
+        "wuthering-waves-platform-mcp"
       ]
     }
   }
@@ -232,19 +235,19 @@ Windows 路径建议使用正斜杠。配置完成后重启 MCP 客户端。
 发布后可以直接安装:
 
 ```bash
-npm install -g @maple_20/waves-platform
+npm install -g wuthering-waves-platform
 ```
 
 登录鸣潮账号:
 
 ```bash
-waves-platform login
+wuthering-waves-platform login
 ```
 
 查看账号:
 
 ```bash
-waves-platform accounts
+wuthering-waves-platform accounts
 ```
 
 MCP 客户端配置:
@@ -252,8 +255,8 @@ MCP 客户端配置:
 ```json
 {
   "mcpServers": {
-    "waves-platform": {
-      "command": "waves-platform-mcp"
+    "wuthering-waves-platform": {
+      "command": "wuthering-waves-platform-mcp"
     }
   }
 }
@@ -264,13 +267,13 @@ MCP 客户端配置:
 ```json
 {
   "mcpServers": {
-    "waves-platform": {
+    "wuthering-waves-platform": {
       "command": "npx",
       "args": [
         "-y",
         "--package",
-        "@maple_20/waves-platform",
-        "waves-platform-mcp"
+        "wuthering-waves-platform",
+        "wuthering-waves-platform-mcp"
       ]
     }
   }
@@ -280,7 +283,7 @@ MCP 客户端配置:
 登录命令对应为:
 
 ```bash
-npx -y --package @maple_20/waves-platform waves-platform login
+npx -y --package wuthering-waves-platform wuthering-waves-platform login
 ```
 
 ## 在 Pi 中使用
@@ -298,7 +301,7 @@ C:/Users/maple/.pi/agent/mcp.json
 /mcp
 ```
 
-然后选择或重连 `waves-platform`。也可以直接让 AI 查询:
+然后选择或重连 `wuthering-waves-platform`。也可以直接让 AI 查询:
 
 ```text
 查看我的鸣潮角色练度
